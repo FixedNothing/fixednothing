@@ -4,11 +4,10 @@
   "onCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
   "postCreateCommand": "bash .devcontainer/post-create.sh",
   "remoteEnv": {
-    "http_proxy": "http://192.168.31.219:7890", // 替换为你的宿主机内网IP
-    "https_proxy": "http://192.168.31.219:7890",
-    "no_proxy": "localhost,127.0.0.1,172.17.0.0/16" // 排除内网和本地地址
+      "http_proxy": "http://127.0.0.1:7890", 
+      "https_proxy": "http://127.0.0.1:7890",
+      "no_proxy": "localhost,127.0.0.1,172.17.0.0/16"
   },
-  // 关键2：可选，让容器共享宿主机网络（简化网络访问，适合本地开发）
   "runArgs": ["--network", "host"],
   "customizations": {
     "vscode": {
